@@ -1,0 +1,30 @@
+!SESSION 2026-02-12 19:38:14.888 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-02-12 19:40:07.682
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-02-12 19:40:07.684
+!MESSAGE Log4j2 initialized with config file C:\Users\admin\Desktop\stm32_project\Industrial-Edge-AI-Solution-Challenge-2026\pwm_motor_control\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-02-12 19:40:11.781
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-02-12 19:45:42.768 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-02-12 19:49:29.175
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-02-12 19:49:29.176
+!MESSAGE Log4j2 initialized with config file C:\Users\admin\Desktop\stm32_project\Industrial-Edge-AI-Solution-Challenge-2026\pwm_motor_control\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-02-12 19:49:32.506
+!MESSAGE Started RMI Server, listening on port 41337
