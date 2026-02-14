@@ -20,6 +20,7 @@
 #include "main.h"
 #include "motor.h"
 #include "servo.h"
+#include "button.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -64,29 +65,16 @@ static void MX_TIM3_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-#define SERVO_HOME_DEG         60
-#define SERVO_ACT_DEG          0   // 버튼 누르면 이 각도로 이동(원하면 160 등으로 바꿔)
+#define SERVO_HOME_DEG         75 // 서보모터 초기각도
+#define SERVO_ACT_DEG          0  // 버튼 누를시 변경각도
 
-/* ===== 버튼/상태 ===== */
-volatile uint32_t g_btn_last_ms = 0;
-volatile uint8_t  g_btn_event   = 0; // ISR에서 이벤트만 올림
-volatile uint8_t  g_servo_pos   = 0; // 0=HOME, 1=ACT
+static uint8_t g_servo_pos = 0;
 
-/* ===== 버튼 인터럽트 콜백 ===== */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-#ifdef B1_Pin
-  if (GPIO_Pin == B1_Pin)
-#else
-  if (GPIO_Pin == GPIO_PIN_13)
-#endif
-  {
-    uint32_t now = HAL_GetTick();
-    if (now - g_btn_last_ms < 200) return; // 디바운스
-    g_btn_last_ms = now;
-    g_btn_event = 1; // 메인 루프에서 처리
-  }
+    Button_EXTI_Callback(GPIO_Pin);
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -123,13 +111,9 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-  // ===== Servo는 그대로 =====
-//  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-//  Servo_SetAngle(SERVO_HOME_DEG);
-
   // ===== Motor Driver =====
   Motor_Init(&htim2);   // 내부에서 PWM 시작됨
-  Motor_SetSpeed(60);   // 앞으로 60%
+  Motor_SetSpeed(55);   // 앞으로 60%
 
   /* ===== Servo Driver ===== */
   Servo_Init(&htim3);
@@ -141,18 +125,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-      if (g_btn_event)
-      {
-          g_btn_event = 0;
-          g_servo_pos ^= 1U;
-
-          if (g_servo_pos)
-              Servo_SetAngle(SERVO_ACT_DEG);
-          else
-              Servo_SetAngle(SERVO_HOME_DEG);
-      }
-
-      HAL_Delay(10);
+	  if (Button_GetEvent())
+	      {
+		  	  // XOR연산을 통해 서보모터결과 계속 전횐
+	          g_servo_pos ^= 1U;
+	          if (g_servo_pos)
+	              Servo_SetAngle(SERVO_ACT_DEG);
+	          else
+	              Servo_SetAngle(SERVO_HOME_DEG);
+	      }
+	  HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }
