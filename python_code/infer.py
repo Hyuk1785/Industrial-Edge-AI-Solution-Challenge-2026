@@ -7,7 +7,8 @@ from tensorflow import keras
 from utils import file_to_windows
 
 INFER_FILES = [
-    "data/normal_20260217_181258.csv"
+    # "data/normal_20260217_181258.csv"
+    "data/defect_20260218_185606.csv"
 ]
 
 THRESHOLD = 0.5

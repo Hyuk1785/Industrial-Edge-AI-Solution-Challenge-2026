@@ -2,8 +2,8 @@
 import pandas as pd
 import numpy as np
 
-WINDOW = 50
-STEP = 25
+WINDOW = 5
+STEP = 1
 
 def extract_features(window):
     ax, ay, az = window['ax'], window['ay'], window['az']
