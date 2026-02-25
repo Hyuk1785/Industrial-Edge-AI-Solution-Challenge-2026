@@ -41,11 +41,6 @@
 ### Embedded
 - STM32CubeIDE
 - C (STM32 HAL 기반 센서 값 수집/제어 로직)
-
-### Sensors
-- INA219 (Current / Voltage / Power)
-- MPU6050 (Accel / Gyro)
-
 ---
 
 ## 4) 시스템 아키텍처
