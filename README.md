@@ -5,12 +5,12 @@
 1) 프로젝트 시연 영상(전체 동작 과정)
 
 - 전류·진동 데이터를 수집하고, 온디바이스 AI로 이상을 판정한 뒤 결과가 알림/로그로 반영되는 전체 시나리오 흐름을 보여줍니다.
-  https://www.youtube.com/watch?v=rmL8mo_q7-o
+- https://www.youtube.com/watch?v=rmL8mo_q7-o
 
 2) 프로젝트 발표 영상(내부 구현 상세)
 
 - 데이터 처리/학습/모델 변환/MCU 추론/판정 로직 등 시스템의 구현 구조와 핵심 설계 포인트를 설명합니다.
-  https://www.youtube.com/watch?v=ldMNoJ08gf0
+- https://www.youtube.com/watch?v=ldMNoJ08gf0
 
 ---
 
