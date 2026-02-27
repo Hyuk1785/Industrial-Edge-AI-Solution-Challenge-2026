@@ -1,6 +1,16 @@
-# Motor Anomaly Detection TinyML (Current + Vibration)
+# 전류·진동 융합 기반 온디바이스 AI 모터 이상 탐지 시스템(MADS)
 
 전류(INA219) + 진동(MPU6050) 센서 데이터를 기반으로 모터의 정상/이상 상태를 학습하고, TinyML(TFLite Micro) 형태로 임베디드(STM32)에서 실시간 추론하여 제어 로직까지 연결한 프로젝트입니다.
+
+1) 프로젝트 시연 영상(전체 동작 과정)
+
+- 전류·진동 데이터를 수집하고, 온디바이스 AI로 이상을 판정한 뒤 결과가 알림/로그로 반영되는 전체 시나리오 흐름을 보여줍니다.
+- https://www.youtube.com/watch?v=rmL8mo_q7-o
+
+2) 프로젝트 발표 영상(내부 구현 상세)
+
+- 데이터 처리/학습/모델 변환/MCU 추론/판정 로직 등 시스템의 구현 구조와 핵심 설계 포인트를 설명합니다.
+- https://www.youtube.com/watch?v=ldMNoJ08gf0
 
 ---
 
@@ -80,6 +90,8 @@ CSV 컬럼 예시:
 ## 6) 하드웨어 구성 (Hardware)
 
 본 프로젝트는 전류/진동 센서 데이터를 기반으로 모터 이상을 판단하고, 2개의 STM32 보드로 제어와 추론 역할을 분리하여 구성했습니다.
+- 부품 목록(BOM): 하드웨어 부품목록.xlsx
+- 하드웨어 핀맵(Pin Map): Hardware_PinMap/STM보드 최종본(L432KC+F103RB).xlsx
 
 ### MCU / Boards
 
