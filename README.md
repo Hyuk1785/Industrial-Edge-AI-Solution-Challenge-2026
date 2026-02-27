@@ -2,8 +2,8 @@
 
 전류(INA219) + 진동(MPU6050) 센서 데이터를 기반으로 모터의 정상/이상 상태를 학습하고, TinyML(TFLite Micro) 형태로 임베디드(STM32)에서 실시간 추론하여 제어 로직까지 연결한 프로젝트입니다.
 
-![project_image1](./image/project_image1.PNG)
-![project_image2](./image/project_image2.PNG)
+![project_image1](./image/project_image1.jpg)
+![project_image2](./image/project_image2.jpg)
 
 1) 프로젝트 시연 영상(전체 동작 과정)
 
